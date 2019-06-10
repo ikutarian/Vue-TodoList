@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TodoList</title>
+</head>
+<body>
+<div id="app">
+	<input type="text" v-model="newTodo"/>
+	<button v-on:click="addNewTodo">添加</button>
+	<ul>
+		<todo-item v-bind:content="todo"
+				   v-bind:index="index"
+				   v-for="(todo, index) in todoList" 
+				   @delete='deleteItem'>
+		</todo-item>
+	</ul>
+</div>
+
+<script src="js/lib/vue.js"></script>
+<script src="js/todoList.js"></script>
+</body>
+</html>
